@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamlab Studio | Photography · Videography · Venue Hire · Melbourne</title>
+  <meta name="description" content="Dreamlab Studio — photography, videography and venue hire in Altona North, Melbourne. Fashion, brand and events photography.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-main">DREAMLAB</span>
+        <span class="nav__logo-sub">STUDIO</span>
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#book" class="nav__link nav__link--cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <!--
+      VIDEO BACKGROUND:
+      - desktop/tablet: video/hero-desktop.mp4
+      - mobile: video/hero-mobile.mp4
+      The poster image shows as a fallback while the video is loading or if no file is present.
+    -->
+    <video id="heroBg" class="hero__video" autoplay muted loop playsinline preload="auto"
+           poster="https://picsum.photos/seed/dreamlab-studio-hero/1920/1080">
+      <source src="video/hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="video/hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+    </video>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__center">
+      <p class="hero__eyebrow">Est. 2020 &mdash; Altona North</p>
+      <h1 class="hero__title">DREAMLAB<br>STUDIO</h1>
+      <p class="hero__sub">Photography &middot; Videography &middot; Venue Hire &middot; Melbourne</p>
+    </div>
+
+    <div class="hero__cta-wrap">
+      <a href="#book" class="btn btn--outline btn--lg">Book a Shoot</a>
+    </div>
+  </section>
+
+  <!-- ===== BENTO GRID ===== -->
+  <section class="bento" aria-label="Studio at a glance">
+    <div class="bento__wrap">
+      <div class="bento__grid">
+
+        <!-- A: Studios count -->
+        <div class="bento__cell bento__cell--a">
+          <strong class="bento__num">3</strong>
+          <span class="bento__lbl">Creative<br>Studios</span>
+        </div>
+
+        <!-- B: Centre hero — spans 2 cols × 2 rows -->
+        <div class="bento__cell bento__cell--b">
+          <div class="bento__cell-body">
+            <div class="bento__num-row">
+              <strong class="bento__num bento__num--xl">2,400</strong>
+              <span class="bento__unit">sq ft</span>
+            </div>
+            <span class="bento__lbl">Studio Space</span>
+            <p class="bento__sub">17/45 McArthurs Rd &middot; Altona North</p>
+          </div>
+        </div>
+
+        <!-- C: Year established -->
+        <div class="bento__cell bento__cell--c">
+          <strong class="bento__num">2020</strong>
+          <span class="bento__lbl">Year<br>Established</span>
+        </div>
+
+        <!-- D: Shoots completed -->
+        <div class="bento__cell bento__cell--d">
+          <strong class="bento__num">224</strong>
+          <span class="bento__lbl">Shoots<br>Completed</span>
+        </div>
+
+        <!-- E: Shoot types -->
+        <div class="bento__cell bento__cell--e">
+          <strong class="bento__num">8+</strong>
+          <span class="bento__lbl">Shoot<br>Types</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Stories We've Told</h2>
+      </div>
+      <div class="portfolio__filters fade-up" role="group" aria-label="Filter portfolio">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="brand">Brand</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+      </div>
+      <div class="portfolio__grid" id="portfolioGrid">
+
+        <!-- FASHION -->
+        <figure class="portfolio__item" data-category="fashion">
+          <a href="https://picsum.photos/seed/dl-f1/1200/1500" class="glightbox" data-gallery="fashion" data-title="Fashion — Studio Editorial">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-f1/600/750" alt="Fashion editorial shoot" loading="lazy">
+              <div class="portfolio__caption"><span>Fashion</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="brand">
+          <a href="https://picsum.photos/seed/dl-b1/1200/1500" class="glightbox" data-gallery="brand" data-title="Brand — Product Campaign">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-b1/600/750" alt="Brand campaign shoot" loading="lazy">
+              <div class="portfolio__caption"><span>Brand</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="events">
+          <a href="https://picsum.photos/seed/dl-e1/1200/1500" class="glightbox" data-gallery="events" data-title="Events — Corporate Launch">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-e1/600/750" alt="Corporate event photography" loading="lazy">
+              <div class="portfolio__caption"><span>Events</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="fashion">
+          <a href="https://picsum.photos/seed/dl-f2/1200/1500" class="glightbox" data-gallery="fashion" data-title="Fashion — Lookbook Shoot">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-f2/600/750" alt="Fashion lookbook photography" loading="lazy">
+              <div class="portfolio__caption"><span>Fashion</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="brand">
+          <a href="https://picsum.photos/seed/dl-b2/1200/1500" class="glightbox" data-gallery="brand" data-title="Brand — Identity Shoot">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-b2/600/750" alt="Brand identity photography" loading="lazy">
+              <div class="portfolio__caption"><span>Brand</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="events">
+          <a href="https://picsum.photos/seed/dl-e2/1200/1500" class="glightbox" data-gallery="events" data-title="Events — Gala Evening">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-e2/600/750" alt="Gala event photography" loading="lazy">
+              <div class="portfolio__caption"><span>Events</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="fashion">
+          <a href="https://picsum.photos/seed/dl-f3/1200/1500" class="glightbox" data-gallery="fashion" data-title="Fashion — Street Series">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-f3/600/750" alt="Fashion street photography" loading="lazy">
+              <div class="portfolio__caption"><span>Fashion</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="brand">
+          <a href="https://picsum.photos/seed/dl-b3/1200/1500" class="glightbox" data-gallery="brand" data-title="Brand — Social Content">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-b3/600/750" alt="Brand social content shoot" loading="lazy">
+              <div class="portfolio__caption"><span>Brand</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="events">
+          <a href="https://picsum.photos/seed/dl-e3/1200/1500" class="glightbox" data-gallery="events" data-title="Events — Product Launch">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-e3/600/750" alt="Product launch event" loading="lazy">
+              <div class="portfolio__caption"><span>Events</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="fashion">
+          <a href="https://picsum.photos/seed/dl-f4/1200/1500" class="glightbox" data-gallery="fashion" data-title="Fashion — Campaign Shoot">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-f4/600/750" alt="Fashion campaign photography" loading="lazy">
+              <div class="portfolio__caption"><span>Fashion</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="brand">
+          <a href="https://picsum.photos/seed/dl-b4/1200/1500" class="glightbox" data-gallery="brand" data-title="Brand — Commercial Series">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-b4/600/750" alt="Commercial brand photography" loading="lazy">
+              <div class="portfolio__caption"><span>Brand</span></div>
+            </div>
+          </a>
+        </figure>
+
+        <figure class="portfolio__item" data-category="events">
+          <a href="https://picsum.photos/seed/dl-e4/1200/1500" class="glightbox" data-gallery="events" data-title="Events — Conference Coverage">
+            <div class="portfolio__img-wrap">
+              <img src="https://picsum.photos/seed/dl-e4/600/750" alt="Conference event photography" loading="lazy">
+              <div class="portfolio__caption"><span>Events</span></div>
+            </div>
+          </a>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+      <div class="services__grid">
+        <article class="service-card fade-up">
+          <div class="service-card__inner">
+            <span class="service-card__num">01</span>
+            <h3 class="service-card__title">Fashion &amp; Portrait</h3>
+            <p class="service-card__desc">Editorial fashion, headshots, and personal branding. Captured in our Altona North studio or on location throughout Melbourne.</p>
+            <p class="service-card__price">From $350</p>
+            <a href="#book" class="service-card__link">Enquire <span>&rarr;</span></a>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <div class="service-card__inner">
+            <span class="service-card__num">02</span>
+            <h3 class="service-card__title">Brand &amp; Commercial</h3>
+            <p class="service-card__desc">Products, social content, corporate branding, and editorial. Visual storytelling that elevates your identity and drives results.</p>
+            <p class="service-card__price">From $800</p>
+            <a href="#book" class="service-card__link">Enquire <span>&rarr;</span></a>
+          </div>
+        </article>
+        <article class="service-card fade-up">
+          <div class="service-card__inner">
+            <span class="service-card__num">03</span>
+            <h3 class="service-card__title">Events &amp; Venue Hire</h3>
+            <p class="service-card__desc">Full-event coverage, launches, galas, and conferences. Our studio space is also available to hire for your next shoot or event.</p>
+            <p class="service-card__price">From $600</p>
+            <a href="#book" class="service-card__link">Enquire <span>&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-col fade-up">
+          <div class="about__image-wrap">
+            <img src="https://picsum.photos/seed/dl-about/700/900" alt="Dreamlab Studio photographer" loading="lazy">
+            <div class="about__image-border"></div>
+          </div>
+        </div>
+        <div class="about__content fade-up">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Light, Lens<br>&amp; Story</h2>
+          <p class="about__text">Dreamlab Studio is an independent photography and videography studio nestled in Altona North, Melbourne. We believe every image is a conversation between light and emotion — and our job is to listen.</p>
+          <p class="about__text">Founded in 2020 on a passion for honest, unguarded moments, we work with individuals, brands, and businesses who value authenticity. Our studio is a calm, creative space where ideas come to life.</p>
+          <div class="about__stats">
+            <div class="stat">
+              <strong class="stat__number">224</strong>
+              <span class="stat__label">Shoots</span>
+            </div>
+            <div class="stat">
+              <strong class="stat__number">1,484</strong>
+              <span class="stat__label">Happy Clients</span>
+            </div>
+            <div class="stat">
+              <strong class="stat__number">5+</strong>
+              <span class="stat__label">Years Active</span>
+            </div>
+          </div>
+          <a href="#book" class="btn btn--white">Book a Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOK ===== -->
+  <section class="book section" id="book">
+    <div class="container">
+      <div class="book__grid">
+
+        <!-- Info -->
+        <div class="book__info fade-up">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Let's Create<br>Together</h2>
+          <p class="book__text">Ready to book or just have a question? Fill in the form and we'll be in touch within 24 hours.</p>
+          <ul class="book__details">
+            <li class="book__detail">
+              <span class="book__detail-label">Studio Address</span>
+              <span class="book__detail-value">17/45 McArthurs Road<br>Altona North VIC 3025</span>
+            </li>
+            <li class="book__detail">
+              <span class="book__detail-label">Email</span>
+              <span class="book__detail-value">hello@dreamlabstudio.com.au</span>
+            </li>
+            <li class="book__detail">
+              <span class="book__detail-label">Instagram</span>
+              <span class="book__detail-value">@dreamlabstudio</span>
+            </li>
+            <li class="book__detail">
+              <span class="book__detail-label">Hours</span>
+              <span class="book__detail-value">Mon–Sat, 9am – 6pm</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <div class="book__form-col fade-up">
+          <form class="book__form" id="bookForm" method="POST"
+                action="https://formspree.io/f/YOUR_ID" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ffirst">First Name</label>
+                <input type="text" id="ffirst" name="first_name"
+                       placeholder="Jane" autocomplete="given-name" required>
+              </div>
+              <div class="form-group">
+                <label for="flast">Last Name</label>
+                <input type="text" id="flast" name="last_name"
+                       placeholder="Smith" autocomplete="family-name" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email"
+                       placeholder="jane@example.com" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="fphone">Phone</label>
+                <input type="tel" id="fphone" name="phone"
+                       placeholder="+61 4XX XXX XXX" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fshoot">Shoot Type</label>
+                <select id="fshoot" name="shoot_type" required>
+                  <option value="" disabled selected>Select a type</option>
+                  <option value="brand">Brand</option>
+                  <option value="fashion">Fashion</option>
+                  <option value="events">Events</option>
+                  <option value="venue-hire">Venue Hire</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fdate">Preferred Date</label>
+                <input type="date" id="fdate" name="preferred_date">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" rows="4"
+                        placeholder="Tell us about your vision, preferred dates, or any questions…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--white btn--full">Book Your Shoot</button>
+            <div class="form-success" id="formSuccess" aria-live="polite">
+              Thanks! We'll be in touch within 24 hours.
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="book__map fade-up">
+        <iframe
+          src="https://maps.google.com/maps?q=45+McArthurs+Road+Altona+North+VIC+3025+Australia&output=embed&z=15"
+          width="100%" height="380" frameborder="0" style="border:0;"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Dreamlab Studio — 17/45 McArthurs Road, Altona North VIC 3025">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#home" class="nav__logo">
+            <span class="nav__logo-main">DREAMLAB</span>
+            <span class="nav__logo-sub">STUDIO</span>
+          </a>
+          <p class="footer__tagline">Photography that speaks without words.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#book">Book Now</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <p class="footer__social-label">Follow Along</p>
+          <div class="footer__social-links">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Dreamlab Studio. All rights reserved.</p>
+        <p>17/45 McArthurs Road, Altona North VIC 3025</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
