@@ -195,13 +195,16 @@ if (bookForm) {
         body: new URLSearchParams(formData).toString(),
       });
 
-      if (!res.ok) throw new Error('Submission failed');
+      if (!res.ok) {
+        bookForm.submit();
+        return;
+      }
 
       bookForm.reset();
       formSuccess.classList.add('is-visible');
       setTimeout(() => formSuccess.classList.remove('is-visible'), 7000);
     } catch {
-      alert('Something went wrong. Please try again.');
+      bookForm.submit();
     } finally {
       submitBtn.textContent = origLabel;
       submitBtn.disabled = false;
