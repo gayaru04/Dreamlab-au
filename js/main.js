@@ -1,15 +1,15 @@
 /* =============================================================
-   DREAMLAB STUDIO — main.js
+   DREAMLAB STUDIO - main.js
    ============================================================= */
 
-const nav         = document.getElementById('nav');
-const hamburger   = document.getElementById('hamburger');
-const navLinks    = document.getElementById('navLinks');
-const heroBg      = document.getElementById('heroBg');
-const bookForm    = document.getElementById('bookForm');
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const heroBg = document.getElementById('heroBg');
+const bookForm = document.getElementById('bookForm');
 const formSuccess = document.getElementById('formSuccess');
 
-/* 1. NAV — scroll border
+/* 1. NAV - scroll border
    ============================================================= */
 function updateNavState() {
   nav.classList.toggle('is-scrolled', window.scrollY > 40);
@@ -17,9 +17,9 @@ function updateNavState() {
 window.addEventListener('scroll', updateNavState, { passive: true });
 updateNavState();
 
-/* 2. NAV — highlight active section link
+/* 2. NAV - highlight active section link
    ============================================================= */
-const sections   = document.querySelectorAll('section[id]');
+const sections = document.querySelectorAll('section[id]');
 const navLinkEls = document.querySelectorAll('.nav__link');
 
 function updateActiveLink() {
@@ -35,7 +35,7 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink, { passive: true });
 updateActiveLink();
 
-/* 3. MOBILE MENU — fullscreen overlay
+/* 3. MOBILE MENU - fullscreen overlay
    ============================================================= */
 function openMenu() {
   hamburger.classList.add('is-open');
@@ -134,7 +134,7 @@ applyPortfolioStagger();
 
 /* 7. PORTFOLIO FILTER
    ============================================================= */
-const filterBtns     = document.querySelectorAll('.filter-btn');
+const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio__item');
 
 filterBtns.forEach(btn => {
@@ -175,41 +175,36 @@ if (typeof GLightbox !== 'undefined') {
   });
 }
 
-/* 9. CONTACT FORM — Formspree via fetch (no page reload)
+/* 9. CONTACT FORM - Netlify Forms via fetch (no page reload)
    ============================================================= */
 if (bookForm) {
   bookForm.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const submitBtn  = bookForm.querySelector('[type="submit"]');
-    const origLabel  = submitBtn.textContent;
+    const submitBtn = bookForm.querySelector('[type="submit"]');
+    const origLabel = submitBtn.textContent;
 
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
     try {
-      const res = await fetch(bookForm.action, {
-        method:  'POST',
-        body:    new FormData(bookForm),
-        headers: { 'Accept': 'application/json' },
+      const formData = new FormData(bookForm);
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
       });
 
-      if (res.ok) {
-        bookForm.reset();
-        formSuccess.classList.add('is-visible');
-        setTimeout(() => formSuccess.classList.remove('is-visible'), 7000);
-      } else {
-        const data = await res.json().catch(() => ({}));
-        const msg  = data.errors?.map(err => err.message).join(', ')
-                     || 'Something went wrong — please try again.';
-        alert(msg);
-      }
+      if (!res.ok) throw new Error('Submission failed');
+
+      bookForm.reset();
+      formSuccess.classList.add('is-visible');
+      setTimeout(() => formSuccess.classList.remove('is-visible'), 7000);
     } catch {
-      // Network error: fall back to native form submit
-      bookForm.submit();
+      alert('Something went wrong. Please try again.');
     } finally {
       submitBtn.textContent = origLabel;
-      submitBtn.disabled    = false;
+      submitBtn.disabled = false;
     }
   });
 }

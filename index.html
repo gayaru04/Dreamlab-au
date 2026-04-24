@@ -336,8 +336,10 @@
 
         <!-- Form -->
         <div class="book__form-col fade-up">
-          <form class="book__form" id="bookForm" method="POST"
-                action="https://formspree.io/f/YOUR_ID" novalidate>
+          <form class="book__form" id="bookForm" name="booking-inquiry" method="POST"
+                data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="booking-inquiry">
+            <input type="hidden" name="bot-field">
 
             <div class="form-row">
               <div class="form-group">
