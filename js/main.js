@@ -13,6 +13,7 @@ if (heroBg) {
     document.getElementById('heroSrc').src = 'video/hero-mobile.mp4';
     heroBg.load();
   }
+  heroBg.addEventListener('canplay', () => heroBg.play().catch(() => {}), { once: true });
   heroBg.play().catch(() => {});
 }
 const bookForm = document.getElementById('bookForm');
