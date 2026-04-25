@@ -1009,6 +1009,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   /* Show hamburger */
   .nav__hamburger { display: flex; }
 
+  /* Remove backdrop-filter so fixed overlay covers full viewport, not just nav */
+  .nav {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.92);
+  }
+  .nav.is-scrolled {
+    background: rgba(255, 255, 255, 0.97);
+  }
+
   /* Fullscreen black overlay — mobile menu */
   .nav__links {
     position: fixed;
