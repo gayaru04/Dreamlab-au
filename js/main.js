@@ -6,8 +6,14 @@ const nav = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const heroBg = document.getElementById('heroBg');
-if (heroBg && window.innerWidth < 768) {
-  heroBg.poster = 'assets/img/hero-poster-mobile.jpg';
+if (heroBg) {
+  const isMobile = window.innerWidth < 768;
+  if (isMobile) {
+    heroBg.poster = 'assets/img/hero-poster-mobile.jpg';
+    document.getElementById('heroSrc').src = 'video/hero-mobile.mp4';
+    heroBg.load();
+  }
+  heroBg.play().catch(() => {});
 }
 const bookForm = document.getElementById('bookForm');
 const formSuccess = document.getElementById('formSuccess');
