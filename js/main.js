@@ -6,6 +6,9 @@ const nav = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const heroBg = document.getElementById('heroBg');
+if (heroBg && window.innerWidth < 768) {
+  heroBg.poster = 'assets/img/hero-poster-mobile.jpg';
+}
 const bookForm = document.getElementById('bookForm');
 const formSuccess = document.getElementById('formSuccess');
 
